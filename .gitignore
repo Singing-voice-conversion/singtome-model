@@ -8,3 +8,5 @@ hubert_base.pt
 *.pth
 *.wav
 *.exe
+ffmpeg.exe
+ffprobe.exe
