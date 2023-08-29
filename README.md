@@ -19,12 +19,12 @@ pip install -r rvc-requirements.txt
 
 [HuggingFace-1](https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/pretrained_v2)에서 2가지 파일을 다운로드
 - `f0D48k.pth`
-- `f0G48k.pth`
+- `f0G48k.pth`  
 위 2가지 파일은 RVC-model/pretrained_v2 내에 이동
 
 [HuggingFace-2](https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main)에서 2가지 파일을 다운로드
 - `ffmepg.exe`
-- `ffprobe.exe`
+- `ffprobe.exe`  
 위 2가지 파일은 RVC-model의 최상단에 위치하도록 이동 (rvc-train.py와 동일한 경로)
 
 
