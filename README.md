@@ -163,3 +163,5 @@ python rvc-infer.py
 ## 5. Reference
 
 - [Retrieval-based-Voice-Conversion-WebUI](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI)
+
+- [Ultimate-Vocal-Remover-GUI](https://github.com/Anjok07/ultimatevocalremovergui)
