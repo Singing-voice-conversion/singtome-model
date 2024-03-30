@@ -20,7 +20,7 @@ Hello, and thank you for visiting. This GitHub repository contains the implement
 
 | Profile | Name | GitHub | Role |
 | :---: | :---: | :---: | :---: |
-| <img src="./img/moon.jpg" height="120px"> | Jongmoon Ryu <br> **moon**| <a href="https://github.com/Orca0917"> <div style="display: flex; align-items: center;"> <img src="./img/github.png" height="20px"> &nbsp; Orca0917 </div> </a> | Model Pipeline and Architecture Design <br> Creating a Docker Image for RVC Model Training & Inference <br> Managing and Operating AWS SageMaker |
+| <img src="./img/moon.jpg" height="120px"> | Jongmoon Ryu <br> **moon**| <a href="https://github.com/Orca0917"> <div style="display: flex; align-items: center;"> <img src="./img/github.png" height="20px"> &nbsp; Orca0917 </div> </a> | Model Pipeline and Architecture Design <br> Creating a Docker Image for RVC Model <br> Managing and Operating AWS SageMaker |
 | <img src="https://avatars.githubusercontent.com/u/24919880?v=4" height="120px"> | Heechan Chung <br> **anselmo**| <a href="https://github.com/anselmo228"> <div style="display: flex; align-items: center;"> <img src="./img/github.png" height="20px"> &nbsp; anselmo228 </div> </a> | Create a Docker Image for Inferring UVR Models <br> Manage AWS S3 buckets, Lambda, and API gateways <br> Managing singtome project model experiments|
 
 <br>
@@ -59,23 +59,23 @@ This process allows users to experience music converted into their own voice, ad
 
 ## 2. Architecture
 
-이 프로젝트는 실제 서비스 환경을 고려하여 설계되었으며, 모든 학습과 추론 작업을 클라우드에서 처리할 수 있도록 AWS (Amazon Web Services)를 선택했습니다. AWS의 강력한 클라우드 인프라를 활용하여, 모델 학습과 추론을 위한 다음과 같은 서비스를 사용하였습니다:
+This project was designed with a real-service environment in mind and selected AWS (Amazon Web Services) to handle all training and inference tasks in the cloud. Utilizing AWS's robust cloud infrastructure, the following services were employed for model training and inference:
 
-1. **Amazon SageMaker**: 모델 학습을 위해 SageMaker를 사용했습니다. SageMaker는 머신 러닝 모델을 쉽고 빠르게 구축, 학습시키고, 배포할 수 있는 완전 관리형 서비스를 제공합니다.
-2. **AWS Lambda**: 학습 및 추론을 위한 트리거(trigger) 기능으로 Lambda 함수를 사용하였습니다. Lambda는 서버를 관리하지 않고도 코드를 실행할 수 있게 해주는 이벤트 기반 컴퓨팅 서비스입니다.
-
-<br>
-
-이 프로젝트의 클라우드 기반 워크플로우는 대략적으로 다음과 같은 과정을 포함합니다:
-
-1. **사용자 요청 수신**: 사용자로부터 원곡 변환 요청을 받습니다.
-2. **Lambda 트리거 활성화**: 요청을 처리하기 위해 AWS Lambda 함수가 트리거됩니다.
-3. **SageMaker에서 모델 학습 및 추론**: Lambda 함수는 Amazon SageMaker를 호출하여 모델 학습과 추론 작업을 진행합니다.
-4. **결과 반환**: 변환된 음악 파일을 사용자에게 반환합니다.
+1. **Amazon SageMaker**: Used for model training, SageMaker is a fully managed service that allows for the easy and quick construction, training, and deployment of machine learning models.
+2. **AWS Lambda**: Employed as a trigger for training and inference tasks, Lambda is an event-driven computing service that runs code without managing servers.
 
 <br>
 
-이 아키텍처는 클라우드의 유연성과 확장성을 최대한 활용하여, 고품질의 사용자 경험을 제공하도록 설계되었습니다. 사용자의 요청에 따라 모델 학습과 추론이 자동으로 진행되며, 이 모든 과정은 클라우드 서비스를 통해 관리됩니다.
+The cloud-based workflow of this project generally involves the following steps:
+
+1. **Receiving User Requests**: Receives requests for original music conversion from users.
+2. **Activating Lambda Triggers**: An AWS Lambda function is triggered to process the request.
+3. **Training and Inference in SageMaker**: The Lambda function calls Amazon SageMaker to carry out model training and inference tasks.
+4. **Returning Results**: Delivers the converted music file to the user.
+
+<br>
+
+This architecture is designed to leverage the cloud's flexibility and scalability to the fullest, ensuring a high-quality user experience. Model training and inference proceed automatically based on user requests, with all processes managed through cloud services.
 
 <img src="./img/aws_architecture.png" />
 
