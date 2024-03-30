@@ -18,10 +18,10 @@ Hello, and thank you for visiting. This GitHub repository contains the implement
 
 <h3> Model part Team members </h3>
 
-| Profile | Name | GitHub | Role |
-| :---: | :---: | :---: | :---: |
-| <img src="./img/moon.jpg" height="120px"> | Jongmoon Ryu <br> **moon**| <a href="https://github.com/Orca0917"> <div style="display: flex; align-items: center;"> <img src="./img/github.png" height="20px"> &nbsp; Orca0917 </div> </a> | Model Pipeline and Architecture Design <br> Creating a Docker Image for RVC Model <br> Managing and Operating AWS SageMaker |
-| <img src="https://avatars.githubusercontent.com/u/24919880?v=4" height="120px"> | Heechan Chung <br> **anselmo**| <a href="https://github.com/anselmo228"> <div style="display: flex; align-items: center;"> <img src="./img/github.png" height="20px"> &nbsp; anselmo228 </div> </a> | Create a Docker Image for Inferring UVR Models <br> Manage AWS S3 buckets, Lambda, and API gateways <br> Managing singtome project model experiments|
+| Profile | Name | Role |
+| :---: | :---: | :---: |
+| <a href="https://github.com/Orca0917"><img src="./img/moon.jpg" height="120px"></a>| Jongmoon Ryu <br> **moon**| Model Pipeline and Architecture Design <br> Creating a Docker Image for RVC Model training and inference<br> Managing and Operating AWS SageMaker |
+| <a href="https://github.com/anselmo228"><img src="https://avatars.githubusercontent.com/u/24919880?v=4" height="120px"></a> | Heechan Chung <br> **anselmo**| Create a Docker Image for Inferring UVR Models <br> Manage AWS S3 buckets, Lambda, and API gateways <br> Managing singtome project model experiments|
 
 <br>
 
