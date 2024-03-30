@@ -108,17 +108,40 @@ All operations were performed within a Docker environment. Therefore, please ref
 - LOCAL GPU: NVIDIA RTX 4090 x 2
 - CLOUD INSTANCE: AWS g4dn.xlarge
 
-### 4.1. RVC-train
 
-[🐳 Goto Dockerfile]()
+### Sample dockerfile
+```Dockerfile
+# Set the base image
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
-### 4.2. RVC-inference
+# Set up working directories
+RUN mkdir -p /opt/ml/input/data/training
+RUN mkdir -p /opt/ml/model
+WORKDIR /opt/ml/code
 
-[🐳 Goto Dockerfile]()
+# Install required packages
+RUN apt-get update
+RUN apt-get install -y build-essential
 
-### 4.3. UVR-inference
+COPY . .
+RUN pip install -r requirements.txt
 
-[🐳 Goto Dockerfile]()
+# Configuration for running training script in SageMaker
+ENV SAGEMAKER_PROGRAM rvc_train.py
+ENV SAGEMAKER_SUBMIT_DIRECTORY /opt/ml/code
+ENV SM_MODEL_DIR /opt/ml/model
+ENV SM_CHANNEL_TRAINING /opt/ml/input/data/training/
+
+# ENTRYPOINT configuration (command to run during training)
+ENTRYPOINT ["python", "rvc_train.py"]
+```
+
+### Run container
+```comandline
+docker build -t your_image_name .
+
+docker run --gpus all -v /path/to/local/data:/opt/ml/input/data/training your_image_name
+```
 
 <br>
 
